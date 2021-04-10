@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {BrowserRouter} from "react-router-dom";
+import {Route} from 'react-router';
+import {Wrap, MyFloat} from "./Styles";
+import Main from "./Main";
+import Write from "./Write";
+import './font.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Wrap is_root="is_root">
+            <BrowserRouter>
+                <Route path="/" exact="exact" component={Main}/>
+                <Route path="/write" exact="exact" component={Write}/>
+            </BrowserRouter>
+        </Wrap>
+    );
 }
 
 export default App;
